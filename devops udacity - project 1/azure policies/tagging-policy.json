@@ -1,0 +1,27 @@
+{
+    "properties": {
+        "displayName": "Tagging all resources before deploying",
+        "description": "This policy enables you to restrict the deploying of indexed resources withouts tag.",
+        "mode": "Indexed",
+        "metadata": {
+            "version": "1.0.0",
+            "category": "Tags"
+        },
+        "parameters": {
+
+        },
+        "policyRule": {
+            "if": {
+               
+                "not":{
+
+                    "field" : "tags",
+                    "exists" : "true"
+                }
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    }
+}
